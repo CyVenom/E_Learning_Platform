@@ -1,0 +1,129 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, rgba(58, 123, 213, 0.9), rgba(58, 213, 196, 0.9));
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Glass Effect Container */
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Title Styling */
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.4);
+    color: #333;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form select {
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(58, 123, 213, 0.8), rgba(58, 213, 196, 0.8));
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, rgba(58, 213, 196, 0.8), rgba(58, 123, 213, 0.8));
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form p {
+    margin: 10px 0;
+    color: #ffab00;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+form a {
+    color: #ffab00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message Styling */
+form p[style='color: red;'] {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+/* Back to Login Button */
+.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.8), rgba(255, 165, 0, 0.8));
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.8), rgba(255, 69, 0, 0.8));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
