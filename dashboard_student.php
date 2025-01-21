@@ -60,6 +60,27 @@ $query = "
     INNER JOIN users ON courses.teacher_id = users.id
 ";
 $result = $conn->query($query);
+
+
+
+$search_query = "";
+if (isset($_GET['search'])) {
+    $search_query = $conn->real_escape_string($_GET['search']);
+}
+
+$query = "
+    SELECT 
+        courses.id AS course_id,
+        courses.title,
+        courses.description,
+        users.name AS teacher_name,
+        (SELECT COUNT(*) FROM enrollments WHERE enrollments.course_id = courses.id) AS total_students,
+        (SELECT COUNT(*) FROM enrollments WHERE enrollments.course_id = courses.id AND enrollments.student_id = $user_id) AS is_enrolled
+    FROM courses
+    INNER JOIN users ON courses.teacher_id = users.id
+    WHERE courses.title LIKE '%$search_query%' OR courses.description LIKE '%$search_query%'
+";
+$result = $conn->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,6 +99,12 @@ $result = $conn->query($query);
                 <p><?php echo $message; ?></p>
             </div>
         <?php endif; ?>
+
+        <!-- Search Bar -->
+        <form method="GET" action="dashboard_student.php">
+            <input type="text" name="search" placeholder="Search courses..." value="<?php echo htmlspecialchars($search_query); ?>">
+            <button type="submit">Search</button>
+        </form>
 
         <h3>Available Courses</h3>
         <ul>
@@ -106,3 +133,4 @@ $result = $conn->query($query);
     </div>
 </body>
 </html>
+
