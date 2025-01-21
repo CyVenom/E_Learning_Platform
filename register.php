@@ -44,7 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <select name="role" required>
                 <option value="student">Student</option>
                 <option value="teacher">Teacher</option>
-                <option value="admin">Administrator</option>
             </select>
             <button type="submit">Register</button>
             <?php if (!empty($error)) echo "<p style='color: red;'>$error</p>"; ?>
